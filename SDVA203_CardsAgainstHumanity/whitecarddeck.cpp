@@ -87,14 +87,27 @@ void WhiteCardDeck::shuffle() {
 				//check if the value has already been assigned
 				if (checkList[cardNumber - 1] == 0) {
 					WhiteCard *whiteCard = new WhiteCard(lines[cardNumber - 1]);
+					whiteCardDeck[card] = whiteCard;
+
+					//Indicate this Card has been dealt
+					checkList[cardNumber - 1] = 1;
+
+					//Done with this Card
+					unique = true;
 				}
 			}
 
 		}
 
+		cardsLeft = numberOfCards;
 	}
 	else {
 		cout << "WhiteCardDesk::shuffle(): no cards to shuffle." << endl;
 		exit(0);
 	}
+}
+
+//FOR UNIT TESTS ONLY
+WhiteCard** WhiteCardDeck::getCardDeck() {
+	return whiteCardDeck;
 }

@@ -23,5 +23,8 @@ class WhiteCardDeck {
 		~WhiteCardDeck();
 
 		int getNumberOfCards();
+
+		//FOR UNIT TESTS ONLY
+		WhiteCard** getCardDeck();
 };
 
