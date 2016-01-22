@@ -2,7 +2,8 @@
 
 
 WhiteCardDeck::WhiteCardDeck() {
-	//whiteCardDeck = new WhiteCard[white];
+	//Initialize random seed
+	srand(time(NULL));
 }
 
 
@@ -82,7 +83,11 @@ void WhiteCardDeck::shuffle() {
 
 			while (!unique) {
 
+				cardNumber = rand() % numberOfCards + 1; //Generate a number between 1 and the number 1.9999999...
+				//check if the value has already been assigned
+				if (checkList[cardNumber - 1] == 0) {
 
+				}
 			}
 
 		}
