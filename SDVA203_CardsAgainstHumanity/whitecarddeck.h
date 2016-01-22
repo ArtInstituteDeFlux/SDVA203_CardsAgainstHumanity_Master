@@ -9,11 +9,12 @@ class WhiteCardDeck {
 
 	private:
 		WhiteCard	**whiteCardDeck;
-		string		*cards;
+		string		*lines;
 		int			numberOfCards;
 		int			cardsLeft;
 
-		string* readFile(string fileName);
+		void readFile(string fileName);
+		void shuffle();
 
 	public:
 		WhiteCardDeck();

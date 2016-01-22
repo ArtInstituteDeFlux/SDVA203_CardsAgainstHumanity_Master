@@ -14,11 +14,13 @@ int WhiteCardDeck::getNumberOfCards() {
 	return numberOfCards;
 }
 
-string* WhiteCardDeck::readFile(string fileName) {
+void WhiteCardDeck::readFile(string fileName) {
 	
-	string *lines		= nullptr;
+	//class variables declared in the header
+	lines				= nullptr;
+	numberOfCards		= 0;
+
 	string line			= "";
-	int lineCount		= 0;
 	int index			= 0;
 	
 	try {
@@ -26,20 +28,18 @@ string* WhiteCardDeck::readFile(string fileName) {
 		if (inputFile.is_open()) {
 
 			// count the number of text lines
-			while (!inputFile.eof()) 
-			{
+			while (!inputFile.eof()) {
 				getline(inputFile, line);
-				lineCount++;
+				numberOfCards++;
 			}
 			inputFile.close();
 
 			// Read the lines
-			lines = new string[lineCount];
+			lines = new string[numberOfCards];
 
 			inputFile.open(fileName, ios::in);
 
-			while (!inputFile.eof()); 
-			{
+			while (!inputFile.eof()) {
 				getline(inputFile, line);
 				lines[index] = line;
 				index++;
@@ -47,8 +47,15 @@ string* WhiteCardDeck::readFile(string fileName) {
 			}
 			inputFile.close();
 		}
+		else {
+			cout << "WhiteCardDeck::readFile(): " << fileName << " not found" << endl;
+		}
 	}
 	catch (exception const& e) {
 		cout << "WhiteCardDeck::readFile(): " << fileName << " not found" << endl;
 	}
+}
+
+void WhiteCardDeck::shuffle() {
+
 }
