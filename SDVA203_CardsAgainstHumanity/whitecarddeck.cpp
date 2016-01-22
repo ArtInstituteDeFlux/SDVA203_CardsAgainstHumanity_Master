@@ -57,5 +57,10 @@ void WhiteCardDeck::readFile(string fileName) {
 }
 
 void WhiteCardDeck::shuffle() {
+	if (numberOfCards > 0) {
 
+	}
+	else {
+		cout << "WhiteCardDesk::shuffle(): no cards to shuffle." << endl;
+	}
 }
