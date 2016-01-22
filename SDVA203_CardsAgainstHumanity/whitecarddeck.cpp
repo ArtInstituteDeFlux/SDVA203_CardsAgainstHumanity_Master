@@ -86,7 +86,7 @@ void WhiteCardDeck::shuffle() {
 				cardNumber = rand() % numberOfCards + 1; //Generate a number between 1 and the number 1.9999999...
 				//check if the value has already been assigned
 				if (checkList[cardNumber - 1] == 0) {
-
+					WhiteCard *whiteCard = new WhiteCard(lines[cardNumber - 1]);
 				}
 			}
 
