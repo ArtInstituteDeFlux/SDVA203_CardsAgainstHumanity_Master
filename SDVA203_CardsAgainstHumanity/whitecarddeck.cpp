@@ -74,7 +74,18 @@ void WhiteCardDeck::shuffle() {
 			checkList[card] = 0;
 		}
 
-		//Randomly shuffle
+		//Randomly shuffle the Cards
+		for (int card = 0; card < numberOfCards; card++) {
+
+			//Reset the loop
+			unique = false;
+
+			while (!unique) {
+
+
+			}
+
+		}
 
 	}
 	else {
