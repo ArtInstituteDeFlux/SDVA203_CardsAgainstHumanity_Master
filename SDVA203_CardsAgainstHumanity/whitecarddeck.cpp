@@ -49,10 +49,12 @@ void WhiteCardDeck::readFile(string fileName) {
 		}
 		else {
 			cout << "WhiteCardDeck::readFile(): " << fileName << " not found" << endl;
+			exit(0);
 		}
 	}
 	catch (exception const& e) {
 		cout << "WhiteCardDeck::readFile(): " << fileName << " not found" << endl;
+		exit(0);
 	}
 }
 
@@ -62,5 +64,6 @@ void WhiteCardDeck::shuffle() {
 	}
 	else {
 		cout << "WhiteCardDesk::shuffle(): no cards to shuffle." << endl;
+		exit(0);
 	}
 }
