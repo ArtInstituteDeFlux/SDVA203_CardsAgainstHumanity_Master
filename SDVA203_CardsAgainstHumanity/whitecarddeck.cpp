@@ -61,6 +61,21 @@ void WhiteCardDeck::readFile(string fileName) {
 void WhiteCardDeck::shuffle() {
 	if (numberOfCards > 0) {
 
+		whiteCardDeck = new WhiteCard*[numberOfCards];
+		int cardNumber = 0;
+		bool unique = false;
+
+		cardsLeft = 0;
+
+		//Create and initialize the checklist parallel array
+		int *checkList = new int[numberOfCards];
+
+		for (int card = 0; card < numberOfCards; card++) {
+			checkList[card] = 0;
+		}
+
+		//Randomly shuffle
+
 	}
 	else {
 		cout << "WhiteCardDesk::shuffle(): no cards to shuffle." << endl;
